@@ -36,18 +36,10 @@ Compilation takes >12h on https://webvm.io on Intel i5-2520M.
 | i5-2520M	|Chromium 106.0.5249.91	|345s| 45s|  3s| 88s|  5s|
 | Tesla M3 MCU2 |Chromium 2022.28.2	|    |177s| 11s|457s| 21s|
 
-The used script was found in
-https://dirask.com/posts/CPU-Benchmark-single-core-speed-test-with-Fibonacci-Sequence-in-JavaScript-pJqwoD
-
-
 ## Native Java-Script
 
-Open
-[nativejs.html](https://raw.githack.com/twischer/wasmbench/main/nativejs.html)
-to execute the test.
-
-This web page uses `nativejs.js`.
-
+This web page uses `native_js.js`. This script was found in
+https://dirask.com/posts/CPU-Benchmark-single-core-speed-test-with-Fibonacci-Sequence-in-JavaScript-pJqwoD
 
 ## Compiled Java-Script
 
@@ -69,10 +61,6 @@ node emcc_js.js
 python3 -m http.server &
 xdg-open http://localhost:8000/emcc_js.html
 ```
-Open
-[emcc_js.html](https://raw.githack.com/twischer/wasmbench/main/build/emcc_js.html)
-to execute the test.
-
 
 ## WebAssambly
 
@@ -94,9 +82,5 @@ node emcc_wasm.js
 python3 -m http.server &
 xdg-open http://localhost:8000/emcc_wasm.html
 ```
-Open
-[emcc_wasm.html](https://raw.githack.com/twischer/wasmbench/main/build/emcc_wasm.html)
-to execute the test.
-
 See https://emscripten.org/docs/getting_started/Tutorial.html for details.
 
