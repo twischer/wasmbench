@@ -1,18 +1,5 @@
 # WebAssambler benchmark
 
-| CPU		|test.cpp| -O3  |Engine			|[Native JS](https://raw.githack.com/twischer/wasmbench/main/native_js.html)|[emcc JS](https://raw.githack.com/twischer/wasmbench/main/build/emcc_js.html)|[emcc -O3 JS](https://raw.githack.com/twischer/wasmbench/main/build/emcc_js_o3.html)|[emcc Wasm](https://raw.githack.com/twischer/wasmbench/main/build/emcc_wasm.html)|[emcc -O3 Wasm](https://raw.githack.com/twischer/wasmbench/main/build/emcc_wasm_o3.html)|
-|---------------|-------|-------|-----------------------|----|----|----|----|----|
-| RPi 2 B+	| 234s	|	|			|    |    |    |    |    |
-| RPi 3 B+	| 201s	|	|			|    |    |    |    |    |
-| Banana PI M3	| 142s	|	|			|    |    |    |    |    |
-| i5-2520M	| 27s	| 3s	|NodeJS	v18.7.0		| 58s| 35s|  3s|    |    |
-| i5-2520M	|	|	|Firefox 102.3.0esr	| 74s| 29s| 12s| 30s| 13s|
-| i5-2520M	|	|	|Chromium 106.0.5249.91	|345s| 45s|  3s| 88s|  5s|
-| Ryzen 9 5900X	| 2s	| ???	|			|    |    |    |    |    |
-
-The used script was found in
-https://dirask.com/posts/CPU-Benchmark-single-core-speed-test-with-Fibonacci-Sequence-in-JavaScript-pJqwoD
-
 ## Install
 
 ```
@@ -27,6 +14,31 @@ clang++-14 test.cpp -o test
 clang++-14 -O3 test.cpp -o test_o3
 ./test_o3
 ```
+
+| CPU		| VM		| -O0	| -O3	|
+|---------------|-------	|-------|-------|
+| RPi 2 B+	|Native		| 234s	|	|
+| RPi 3 B+	|Native		| 201s	|	|
+| Banana PI M3	|Native		| 142s	|	|
+| i5-2520M	|Native		| 27s	| 3s	|
+| i5-2520M	|[Alpine](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192)||807s|
+| i5-2520M	|[Fedora33](https://bellard.org/jslinux/vm.html?cpu=riscv64&url=fedora33-riscv.cfg&mem=256)||812s|
+| Ryzen 9 5900X	|Native		| 2s	| ???	|
+
+Compilation takes >12h on https://webvm.io on Intel i5-2520M.
+
+## Script
+
+| CPU		|Engine			|[Native JS](https://raw.githack.com/twischer/wasmbench/main/native_js.html)|[emcc JS](https://raw.githack.com/twischer/wasmbench/main/build/emcc_js.html)|[emcc -O3 JS](https://raw.githack.com/twischer/wasmbench/main/build/emcc_js_o3.html)|[emcc Wasm](https://raw.githack.com/twischer/wasmbench/main/build/emcc_wasm.html)|[emcc -O3 Wasm](https://raw.githack.com/twischer/wasmbench/main/build/emcc_wasm_o3.html)|
+|---------------|-----------------------|----|----|----|----|----|
+| i5-2520M	|NodeJS	v18.7.0		| 58s| 35s|  3s|    |    |
+| i5-2520M	|Firefox 102.3.0esr	| 74s| 29s| 12s| 30s| 13s|
+| i5-2520M	|Chromium 106.0.5249.91	|345s| 45s|  3s| 88s|  5s|
+| Tesla M3 MCU2 |Chromium 2022.28.2	|    |177s| 11s|457s| 21s|
+
+The used script was found in
+https://dirask.com/posts/CPU-Benchmark-single-core-speed-test-with-Fibonacci-Sequence-in-JavaScript-pJqwoD
+
 
 ## Native Java-Script
 
