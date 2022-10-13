@@ -32,10 +32,11 @@ Compilation takes >12h on https://webvm.io on Intel i5-2520M.
 
 | CPU		|Engine			|[Native JS](https://raw.githack.com/twischer/wasmbench/main/native_js.html)|[emcc JS](https://raw.githack.com/twischer/wasmbench/main/build/emcc_js.html)|[emcc -O3 JS](https://raw.githack.com/twischer/wasmbench/main/build/emcc_js_o3.html)|[emcc Wasm](https://raw.githack.com/twischer/wasmbench/main/build/emcc_wasm.html)|[emcc -O3 Wasm](https://raw.githack.com/twischer/wasmbench/main/build/emcc_wasm_o3.html)|
 |---------------|-----------------------|----|----|----|----|----|
+| Tesla M3 MCU2 |Chromium 2022.28.2	|    |177s| 11s|457s| 21s|
 | i5-2520M	|NodeJS	v18.7.0		| 58s| 35s|  3s|    |    |
 | i5-2520M	|Firefox 102.3.0esr	| 74s| 29s| 12s| 30s| 13s|
 | i5-2520M	|Chromium 106.0.5249.91	|345s| 45s|  3s| 88s|  5s|
-| Tesla M3 MCU2 |Chromium 2022.28.2	|    |177s| 11s|457s| 21s|
+| i7-8700	|Firefox 105.0		| 35s| 18s| 11s|    |  7s|
 
 ## Native Java-Script
 
