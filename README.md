@@ -24,9 +24,8 @@ clang++-14 -O3 test.cpp -o test_o3
 | i5-2520M	|[Alpine](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192)||807s|
 | i5-2520M	|[Fedora33](https://bellard.org/jslinux/vm.html?cpu=riscv64&url=fedora33-riscv.cfg&mem=256)||812s|
 | i5-2520M      |[v86 Arch](https://copy.sh/v86/?profile=archlinux)||75s|
+| i5-2520M      |[WebVM](https://webvm.io)||27s|
 | Ryzen 9 5900X	|Native		| 2s	| ???	|
-
-Compilation takes >12h on https://webvm.io on Intel i5-2520M.
 
 ## Script
 
