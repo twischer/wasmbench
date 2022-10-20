@@ -1,5 +1,25 @@
 # WebAssambler benchmark
 
+## Booting [Android 1.6](https://copy.sh/v86/?profile=android)
+
+| CPU         | Engine               |Boot animation|Avg MIPS|Launcher|Avg MIPS|
+|-------------|----------------------|--------------|--------|--------|--------|
+|Tesla M3 MCU2|Chromium 2022.28.2 [1]|     26:50min |    5,4 |>32+7min|    5,9 |
+|i5-2520M     |Firefox 102.3.0esr    |      3:00min |   45,0 | 5:50min|   51,6 |
+|i5-2520M     |Chromium 106.0.5249.91|      3:05min |   45,1 | 5:50min|   49,9 |
+
+[1] VESA mode is not selected. First boot loader entry is used. Auto select timeout was active.
+Tesla system resets sometimes. May be due to high memory usage of browser.
+
+## Booting [Android 4](https://copy.sh/v86/?profile=android4)
+
+| CPU         | Engine               |Boot animation|Avg MIPS|Launcher|Avg MIPS|
+|-------------|----------------------|--------------|--------|--------|--------|
+|i5-2520M     |Firefox 102.3.0esr    |      1:55min |   51,0 |16:55min|  140,0 |
+|i5-2520M     |Chromium 106.0.5249.91|      2:00min |   49,0 |17:30min|  130,0 |
+
+[1] VESA mode is not selected. First boot loader entry is used. Auto select timeout was active.
+
 ## Install
 
 ```
